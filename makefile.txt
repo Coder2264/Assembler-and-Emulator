@@ -1,0 +1,14 @@
+/*****************************************************************************
+TITLE: Claims
+AUTHOR:   Md Kamran
+ROLL NO: 2201CS47
+Declaration of Authorship
+This txt file, claims.txt, is part of the miniproject of CS210 at the 
+department of Computer Science and Engineering, IIT Patna . 
+*****************************************************************************/
+
+For compiling asm.cpp, enter in command prompt
+g++ asm.cpp -o asm
+
+For compiling emu.cpp, enter in command prompt 
+g++ emu.cpp -o emu

@@ -1,0 +1,173 @@
+/*****************************************************************************
+TITLE: Claims
+AUTHOR:   Md Kamran
+ROLL NO: 2201CS47
+Declaration of Authorship
+This txt file, claims.txt, is part of the miniproject of CS210 at the 
+department of Computer Science and Engineering, IIT Patna . 
+*****************************************************************************/
+
+Files:
+==========
+*All the files which have been submitted by me, asm.cpp and emu.cpp and claims.txt, have my name and student id at the start, along with a declaration of authorship.
+
+The evidence for Assembler including the output files from the 7 test examples has also been uploaded. They are test1(4 output files), test2(4 output files), test3(4 output file),test4(4 output files),MyBubbleSort(4 output files), Prog1(4 output files) and Prog2 (4 output files). All the test files have been tested and work properly. As for the evidence for the emulator is uploaded for all the 7 test examples: test1, test2, test3, test4, MyBubbleSort, Prog1 and Prog2 all having one .trace file formed from emulator
+
+*Both of my cpp programs did not show any errors and warnings when i compiled it with
+gcc -std=c89 -pedantic and gcc -std=c89 -pedantic -W -Wall -Wpointer-arith -Wwrite-strings -Wstrict-prototypes standard  or equilvalent ....or gcc ... or g++
+
+*Two programs are compilable with g++ asm.cpp -o asm and g++ emu.cpp -o emu.
+
+
+=============================
+Program format and structure:
+=============================
+1. The assembler:
+
+	* uses a single routine for both passes.
+	* detects label erros.
+	* Produces listing file.
+	* advanced listing file.
+    	* with two data structures to store respectively labels and mnemonic table with expected operands.
+    	* assembles test programs.
+	* implements additional test programs
+	* can implements and demonstrates the instruction SET.
+    	* consistent and sensible formatting with sensible program structure. 
+	* sensible variable, function & type names with explanatory comments.
+	
+	
+
+2. The emulator:
+
+	* with two data structures to store respectively memory and mnemonic table with expected operands.
+    	* loads object file, 
+    	* by giving the instructions like "-Before/-After" , the program can produce memory dump before/after execution.
+    	* by giving the instruction like "-Trace", the program prints the result of program executed.
+    	* detects errant programs.
+
+
+=============================
+Testing:
+=============================
+
+1. The assembler:
+
+I have tested  7 examples shown as below. The errors only occurred in the file test2.asm and 
+the program immediately stopped on the second pass. 
+
+The others were tested without any errors detected and produced three output files, listing file, 
+error log file and machine readable object file, for each example. 
+
+After comparing the listing files and object file of test1.asm , test2.asm, test3.asm and test4.asm 
+with the implemented result given on the assignment, both of them show no difference 
+from those provided( if there is different  that is fine too) 
+
+Further, as for testing on my own => I have also tested MyBubbleSort.asm, Prog1.asm and Prog2.asm
+ 
+
+1)
+#Input: ./asm test1.asm
+#Output: 
+a. test1.lst 
+b. test1.log (without any error messages)
+c. test1.o
+
+2)
+#Input: ./asm test2.asm
+#Output: 
+a. test2.lst 
+b. test2.log (with error messages shown as below but also in log file)
+c. test2.o 
+
+error messages:
+Error in Line number: 4 Duplicate label definition: label
+Error in Line number: 5 No such label: nonesuch
+Error in Line number: 6 Error! Not a Number 08ge
+Error in Line number: 7 Missing operand: ldc
+Error in Line number: 8 Unexpected operand: add 5
+Error in Line number: 9 Error! Not a Number 5, 6
+Error in Line number: 10 Bogus labelname: 0def
+Error in Line number: 11 Bogus Mnemonic: fibble
+Error in Line number: 12 Bogus Mnemonic: 0def
+
+
+3)
+#Input: ./asm test3.asm
+#Output: 
+a. test3.lst
+b. test3.log (without any error messages)
+c. test3.o
+
+
+4)
+#Input: ./asm test4.asm
+#Output: 
+a. test4.lst
+b. test4.log (without any error messages)
+c. test4.o
+
+5)
+#Input: ./asm MyBubbleSort.asm
+#Output: 
+a. MyBubbleSort.lst
+b. MyBubbleSort.log (without any error messages)
+c. MyBubbleSort.o
+
+6)
+#Input: ./asm Prog1.asm
+#Output: 
+a. Prog1.lst
+b. Prog1.log (without any error messages)
+c. Prog1.o
+
+7)
+#Input: ./asm Prog2.asm
+#Output: 
+a. Prog2.lst
+b. Prog2.log (without any error messages)
+c. Prog2.o
+
+
+2. The emulator:
+
+I have tested three examples shown as below. The errors only occurred in the file test3.o and 
+the program immediately stopped. 
+
+The others were tested without any errors detected and produced execution data both on the screen and output text file for each example according to the usage instruction. 
+
+After running the bin file given, the trace data are the same as 
+the implemented result from my own program.
+
+1)
+#Input: ./emu -After test1.o
+#Output: test1.trace
+
+
+2)
+#Input: ./emu -After test2.o
+#Output: test2.trace
+
+
+3)
+#Input: ./emu -After test3.o
+#Output: Fail to complete. 
+
+4)
+#Input: ./emu -after test4.o
+#Output: test4.trace
+
+5)
+#Input: ./emu -after MyBubbleSort.o
+#Output: MyBubbleSort.trace
+
+6)
+#Input: ./emu -after Prog1.o
+#Output: Prog1.trace
+
+7)
+#Input: ./emu -after Prog2.o
+#Output: Prog2.trace
+
+
+
+
